@@ -47,14 +47,14 @@ const chartConfig = {
 
 export function ChartDashboard() {
   return (
-    <Card>
-      <CardHeader>
+    <Card className='shadow-none border-none p-0'>
+      <CardHeader className='p-0'>
         <CardTitle>Deposite & Witdhaw</CardTitle>
         <CardDescription>
           January - June {new Date().getFullYear()}
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className='p-0'>
         <ChartContainer config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
@@ -74,7 +74,7 @@ export function ChartDashboard() {
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className='flex-col items-start gap-2 text-sm'>
+      <CardFooter className='flex-col items-start gap-2 text-sm p-0'>
         <div className='flex gap-2 leading-none font-medium'>
           Trending up by 5.2% this month <TrendingUp className='h-4 w-4' />
         </div>
