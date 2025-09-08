@@ -37,11 +37,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: 'Deposite',
-    color: 'var(--chart-1)',
+    color: 'var(--chart-2)',
   },
   mobile: {
     label: 'Withdraw',
-    color: 'var(--chart-2)',
+    color: 'var(--chart-1)',
   },
 }
 
