@@ -6,7 +6,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { EllipsisVertical } from 'lucide-react'
 import { Badge } from '../ui/badge'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../ui/dropdown-menu'
+import Link from 'next/link'
+import TableItem from './TableRowItem'
 
 const ExpenseTable = () => {
   return (
@@ -15,83 +24,21 @@ const ExpenseTable = () => {
         <TableRow>
           <TableHead>Category</TableHead>
           <TableHead>Status</TableHead>
-          <TableHead>Data</TableHead>
-          <TableHead className='text-right'>Amount</TableHead>
+          <TableHead className='xl:table-cell lg:table-cell md:table-cell hidden'>
+            Date
+          </TableHead>
+          <TableHead>Amount</TableHead>
+          <TableHead className='text-right'></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell>Food</TableCell>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Travel</TableCell>
-          <TableCell className='font-medium'>Withdraw</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Tour</TableCell>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Family</TableCell>
-          <TableCell className='font-medium'>Withdraw</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>Gadget</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>Entertainment</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-red-200 text-red-950'>-250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>Gadget</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>Gadget</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='font-medium'>Deposite</TableCell>
-          <TableCell>Entertainment</TableCell>
-          <TableCell>July 5th, 2025</TableCell>
-          <TableCell className='text-right'>
-            <Badge className='bg-red-200 text-red-950'>-250</Badge>
-          </TableCell>
-        </TableRow>
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
+        <TableItem />
       </TableBody>
     </Table>
   )

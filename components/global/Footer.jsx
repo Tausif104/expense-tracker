@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className='text-center w-full py-5 fixed bottom-0'>
+    <footer className='text-center w-full py-5 border-t-1'>
       Copyright &copy; {new Date().getFullYear()}
     </footer>
   )

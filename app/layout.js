@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={`${inter.className}  antialiased`}>
         <Header />
-        <div className='container mx-auto '>{children}</div>
+        <main className='container mx-auto min-h-[80vh] px-5'>{children}</main>
         <Footer />
       </body>
     </html>

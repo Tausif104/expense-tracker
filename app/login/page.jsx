@@ -14,7 +14,7 @@ import Link from 'next/link'
 
 const LogInPage = () => {
   return (
-    <div className='flex justify-center mt-[200px]'>
+    <div className='flex justify-center items-center h-[80vh]'>
       <Card className='w-full max-w-sm'>
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>

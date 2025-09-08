@@ -15,7 +15,7 @@ const Header = () => {
   const user = true
 
   return (
-    <header className='bg-gray-950 py-3'>
+    <header className='bg-gray-950 py-3 px-3'>
       <div className='flex justify-between items-center container mx-auto'>
         <Link href='/' className='flex items-centter gap-2'>
           <Image width={20} height={20} alt='Logo' src='/vercel.svg' />

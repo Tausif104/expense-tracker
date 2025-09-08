@@ -21,7 +21,7 @@ import {
 
 const RegisterPage = () => {
   return (
-    <div className='flex justify-center mt-[200px]'>
+    <div className='flex justify-center  items-center h-[80vh]'>
       <Card className='w-full max-w-sm'>
         <CardHeader>
           <CardTitle>Register</CardTitle>

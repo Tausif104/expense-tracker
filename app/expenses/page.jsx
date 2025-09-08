@@ -7,7 +7,7 @@ const Expenses = () => {
   return (
     <>
       <div className='my-10'>
-        <div className='grid grid-cols-2 gap-10'>
+        <div className='grid xl:grid-cols-2 lg:grid-cols-1 gap-10'>
           <div>
             <ChartDashboard />
           </div>

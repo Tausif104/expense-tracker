@@ -5,14 +5,14 @@ import Image from 'next/image'
 const Hero = () => {
   return (
     <>
-      <div className='pt-[100px]'>
+      <div className='pt-[100px] '>
         <div className='text-center'>
           <h1 className='text-3xl font-bold'>
             Welcome to Expense Tracker Web App
           </h1>
           <p className='mt-3 mb-4'>
             This is an expense tracker app made with Next.js (server actions).{' '}
-            <br />
+            <br className='hidden xl:block lg:block md:block' />
             Please login to add your expenses.
           </p>
           <div>
