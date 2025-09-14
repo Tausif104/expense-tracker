@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer'
+import { connectDB } from '@/lib/config'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,6 +14,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  connectDB()
   return (
     <html lang='en'>
       <body className={`${inter.className}  antialiased`}>
