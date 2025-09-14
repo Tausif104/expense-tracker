@@ -39,3 +39,14 @@ export const getAllExpense = async () => {
     expenses,
   }
 }
+
+// Delete expense
+export const deleteExpense = async (prevState, formData) => {
+  const { expenseId } = Object.fromEntries(formData)
+
+  const deletedExpense = await Expense.findByIdAndDelete(expenseId)
+
+  if (deletedExpense) {
+    revalidatePath('/expenses')
+  }
+}
