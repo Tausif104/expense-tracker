@@ -56,3 +56,18 @@ export const deleteExpense = async (prevState, formData) => {
     revalidatePath('/expenses')
   }
 }
+
+// Get balance
+export const getBalance = async () => {
+  await connectDB()
+
+  const expenses = await Expense.find({})
+
+  const balance = expenses.reduce((acc, current) => {
+    return Number(acc) + Number(current.amount)
+  }, 0)
+
+  return {
+    balance,
+  }
+}
