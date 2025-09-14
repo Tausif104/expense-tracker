@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer'
-import { connectDB } from '@/lib/config'
 import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({
@@ -15,7 +14,6 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  connectDB()
   return (
     <html lang='en'>
       <body className={`${inter.className}  antialiased`}>

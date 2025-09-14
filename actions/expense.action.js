@@ -1,10 +1,13 @@
 'use server'
 
+import { connectDB } from '@/lib/config'
 import { Expense } from '@/models/expense-model'
 import { revalidatePath } from 'next/cache'
 
 // Expense Create
 export const createExpense = async (prevState, formData) => {
+  await connectDB()
+
   const { category, amount } = Object.fromEntries(formData)
 
   if (!category || !amount) {
@@ -33,6 +36,7 @@ export const createExpense = async (prevState, formData) => {
 
 // Get all expense
 export const getAllExpense = async () => {
+  await connectDB()
   const expenses = await Expense.find({})
 
   return {
@@ -42,6 +46,8 @@ export const getAllExpense = async () => {
 
 // Delete expense
 export const deleteExpense = async (prevState, formData) => {
+  await connectDB()
+
   const { expenseId } = Object.fromEntries(formData)
 
   const deletedExpense = await Expense.findByIdAndDelete(expenseId)
