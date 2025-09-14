@@ -6,11 +6,6 @@ const expenseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {
-      type: String,
-      required: true,
-      enum: ['withdraw', 'deposite'],
-    },
     amount: {
       type: String,
       required: true,

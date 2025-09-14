@@ -4,20 +4,23 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
+import moment from 'moment'
 import { TableCell, TableRow } from '@/components/ui/table'
 import { EllipsisVertical } from 'lucide-react'
 import { Badge } from '../ui/badge'
 
-const TableItem = () => {
+const TableItem = ({ expense }) => {
   return (
     <TableRow>
-      <TableCell>Food</TableCell>
-      <TableCell className='font-medium'>Deposite</TableCell>
+      <TableCell>{expense.category}</TableCell>
+      <TableCell className='font-medium'>
+        {Number(expense.amount) < 0 ? 'Withdraw' : 'Deposite'}
+      </TableCell>
       <TableCell className='xl:table-cell lg:table-cell md:table-cell hidden'>
-        July 5th, 2025
+        {moment(expense.createdAt).format('MMMM Do, YYYY')}
       </TableCell>
       <TableCell>
-        <Badge className='bg-[#affebf] text-[#014b40]'>$250</Badge>
+        <Badge className='bg-[#affebf] text-[#014b40]'>${expense.amount}</Badge>
       </TableCell>
       <TableCell className='text-right'>
         <DropdownMenu>

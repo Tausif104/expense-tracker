@@ -1,23 +1,16 @@
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { EllipsisVertical } from 'lucide-react'
-import { Badge } from '../ui/badge'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '../ui/dropdown-menu'
-import Link from 'next/link'
 import TableItem from './TableRowItem'
+import { getAllExpense } from '@/actions/expense.action'
 
-const ExpenseTable = () => {
+const ExpenseTable = async () => {
+  const { expenses } = await getAllExpense()
+
   return (
     <Table>
       <TableHeader>
@@ -32,13 +25,9 @@ const ExpenseTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
-        <TableItem />
+        {expenses.map((expense) => (
+          <TableItem key={expense.id} expense={expense} />
+        ))}
       </TableBody>
     </Table>
   )
